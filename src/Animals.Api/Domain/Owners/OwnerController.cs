@@ -25,7 +25,7 @@ namespace Animals.Api.Domain.Owners
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateOwner(
+        public async Task<ActionResult> AddOwner(
         [FromBody][Required] CreateOwnerRequest request,
         CancellationToken cancellationToken = default)
         {

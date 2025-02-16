@@ -2,6 +2,7 @@
 using Animals.Core.Domain.Animals.Common;
 using Animals.Core.Domain.Animals.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
 
 namespace Animals.Infrastructure.Core.Domain.Animals.Common;
 
@@ -12,8 +13,7 @@ public class AnimalsRepository(AnimalsDbContext dbContext) : IAnimalsRepository
         return await dbContext
             .Animals
             .Include(x => x.Owners)
-            .Where(x => x.Id == id)
-            .FirstOrDefaultAsync(cancellationToken) ?? throw new InvalidOperationException("Animal was not found");
+            .FirstOrDefaultAsync(x => x.Id == id, cancellationToken) ?? throw new InvalidOperationException("Animal was not found");
     }
 
     public void Add(Animal animal)

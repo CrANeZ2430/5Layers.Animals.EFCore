@@ -2,7 +2,6 @@
 using Animals.Core.Domain.Animals.Common;
 using Animals.Core.Domain.Animals.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
 
 namespace Animals.Infrastructure.Core.Domain.Animals.Common;
 

@@ -11,9 +11,7 @@ public class AnimalsDbContext(DbContextOptions<AnimalsDbContext> options) : DbCo
     public static string AnimalsMigrationHistory = "__AnimalsMigrationHistory";
 
     public DbSet<Animal> Animals { get; set; }
-
     public DbSet<Owner> Owners { get; set; }
-
     public DbSet<AnimalOwner> AnimalsOwners { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
